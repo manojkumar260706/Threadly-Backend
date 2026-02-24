@@ -1,0 +1,57 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: threadly-backend
+
+  data:
+    redis:
+      url: ${REDIS_URL}
+      ssl:
+        enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${GITHUB_ID}
+            client-secret: ${GITHUB_SECRET}
+            scope: read:user, user:email
+
+          google:
+            client-id: ${GOOGLE_ID}
+            client-secret: ${GOOGLE_SECRET}
+            scope:
+              - email
+              - profile
+
+  datasource:
+    url: ${NEON_URL}
+    username: ${NEON_DB_USER}
+    password: ${NEON_DB_PASS}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+jwt:
+  secret: ${JWT_SECRET}
+
+cloudinary:
+  url: ${CLOUDINARY_URL}
+
+app:
+  frontend-url: ${FRONTEND_URL}
