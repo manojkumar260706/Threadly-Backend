@@ -1,0 +1,26 @@
+﻿2026-02-16T14:20:15.668+05:30  INFO 15032 --- [threadly-backend] [           mai
+n] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFacto
+ry for persistence unit 'default'
+2026-02-16T14:20:16.241+05:30  WARN 15032 --- [threadly-backend] [           mai
+n] ConfigServletWebServerApplicationContext : Exception encountered during conte
+xt initialization - cancelling refresh attempt: org.springframework.beans.factor
+y.UnsatisfiedDependencyException: Error creating bean with name 'voteController'
+: Unsatisfied dependency expressed through field 'voteService': Error creating b
+ean with name 'voteService': Unsatisfied dependency expressed through field 'vot
+eEventProducer': Error creating bean with name 'voteEventProducer': Unsatisfied 
+dependency expressed through field 'kafkaTemplate': No qualifying bean of type '
+org.springframework.kafka.core.KafkaTemplate<java.lang.String, com.threadly.even
+t.VoteEvent>' available: expected at least 1 bean which qualifies as autowire ca
+ndidate. Dependency annotations: {@org.springframework.beans.factory.annotation.
+Autowired(required=true)}
+2026-02-16T14:20:16.252+05:30  INFO 15032 --- [threadly-backend] [           mai
+n] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory f
+or persistence unit 'default'
+APPLICATION FAILED TO START
+Field kafkaTemplate in com.threadly.service.VoteEventProducer required a bean of
+ type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' 
+in your configuration.
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionE
+xception

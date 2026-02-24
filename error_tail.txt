@@ -1,0 +1,39 @@
+﻿ervice': Error creating bean with name 'voteService': Unsatisfied dependency expressed through field 'voteEventProducer': Error creating bean with name 'voteEventProducer': Unsatisfied dependency expressed through field 'kafkaTemplate': No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, com.threadly.event.VoteEvent>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-02-16T14:20:16.252+05:30  INFO 15032 --- [threadly-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-16T14:20:16.255+05:30  INFO 15032 --- [threadly-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-16T14:20:16.258+05:30  INFO 15032 --- [threadly-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-16T14:20:16.262+05:30  INFO 15032 --- [threadly-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-02-16T14:20:16.271+05:30  INFO 15032 --- [threadly-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-16T14:20:16.287+05:30 ERROR 15032 --- [threadly-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field kafkaTemplate in com.threadly.service.VoteEventProducer required a bean of type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' in your configuration.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.517 s
+[INFO] Finished at: 2026-02-16T14:20:17+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.0.2:run (default-cli) on project threadly-backend: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
