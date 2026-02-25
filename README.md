@@ -13,6 +13,7 @@ Handles authentication, posts, follows, search, and trending feeds.
 * **Redis** (caching / sessions)
 * **JPA / Hibernate**
 * **Cloudinary** (image storage)
+* **Swagger** (Api endpoints)
 
 ---
 
